@@ -2,7 +2,7 @@ function App() {
   return (
     <div className="App">
       <h1>
-        Olá mundo
+        ado ado ado quem leu isso viado
       </h1>
     </div>
   );
