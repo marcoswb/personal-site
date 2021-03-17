@@ -1,0 +1,26 @@
+.navbar-custom {
+    background-color: #402b34  ;
+}
+
+.navbar-custom .navbar-brand,.navbar-custom .navbar-text {
+    color: #d59d66;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.navbar-custom .navbar-nav .nav-link {
+    color: #d59d66;
+}
+
+.navbar-custom .nav-item.active .nav-link,.navbar-custom .nav-item:hover .nav-link {
+    color: #ffffff;
+}
+
+.main {
+    height: 100vh;
+    background: #402b34;
+}
+
+.container-fluid {
+    height: 100vh;
+}
