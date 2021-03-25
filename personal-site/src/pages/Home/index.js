@@ -10,6 +10,12 @@ export default function Home(){
         <>
             <Navbar />
             <Carrossel />
+            <div class="content">
+                <p>
+                    Um graduando de ciência da computação, solucionador de problemas e pensador crítico.
+                    Atualmente trabalhando como técnico de conversão de dados.
+                </p>
+            </div>
         </>
     )
 }
