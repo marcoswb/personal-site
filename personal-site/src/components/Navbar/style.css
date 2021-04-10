@@ -1,37 +1,18 @@
-* {
-    background-color: #47333c;
-}
-
-.container {
-    padding: 0;
-    margin: 0;
-    background-color: #47333c;
-}
-a {
-    background: transparent;
-    margin: 0;
-    padding: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    text-decoration: none;
-}
-
 nav {
-    max-width: 1180px;
+    margin: 0;
+    padding-right: 10px;
 	height: 80px;
-    margin: 0px auto;
-    display: -webkit-flex;
     display: flex;
-	-ms-align-items: center;
     align-items: center;
+    background-color: #47333c;
 }
 
 h1 {
-	color: #fff;
     margin-left: 10px;
     margin-right: auto;
 	font-size: 24px;
 	font-family: 'Rock Salt', cursive;
+	color: #FFF;
 }
 
 ul {
@@ -41,10 +22,14 @@ ul {
 }
 
 ul li a {
-    color: #fff;
     margin: 0px 10px;
     padding: 10px;
     border-radius: 5px;
+    font-size: 100%;
+    vertical-align: baseline;
+    text-decoration: none;
+    background: transparent;
+    color: #fff;
 }
 
 ul li a:hover {
@@ -100,21 +85,14 @@ ul li a:hover {
 
 @media only screen and (max-width: 700px) {
 
-
-    h1 {
-        margin: 0 auto;
-	}
-
 	ul {
-		-webkit-flex-direction: column;
         flex-direction: column;
-        -webkit-justify-content: center;
         justify-content: center;
 		background: rgba(0, 0, 0, .8);
         position: absolute;
         top: 80px;
         left: 0px;
-        width: 100%;
+        width: 90%;
         z-index: 980;
     }
 
@@ -127,7 +105,7 @@ ul li a:hover {
 		display: block;
         background: transparent;
         margin: 0px;
-        padding: 20px;
+        padding: 10px;
     }
 
     ul li a:hover {

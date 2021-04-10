@@ -18,28 +18,28 @@ export default function Navbar(){
 
     function handleClickToggleMenu(){
         $(this).toggleClass('active');
-        $('.navbar').slideToggle();
+        $('#navbar').slideToggle();
     }
 
     return (
         <>
-            <nav class="container">
-                <h1 class="logo">Marcos Warmling Berti</h1>
-                <ul class="navbar">
+            <nav>
+                <h1>Marcos Warmling Berti</h1>
+                <ul id="navbar">
                     <li>
-                        <a href="#">Home</a>
+                        <a href="/">Home</a>
                     </li>
                     <li>
-                        <a href="#">Experiência</a>
+                        <a href="/experience">Experiência</a>
                     </li>
                     <li>
-                        <a href="#">Formação</a>
+                        <a href="/formation">Formação</a>
                     </li>
                     <li>
-                        <a href="#">Blog</a>
+                        <a href="/blog">Blog</a>
                     </li>
                     <li>
-                        <a href="#">Contatos</a>
+                        <a href="/contacts">Contatos</a>
                     </li>
                 </ul>
                 <div class="nav__icon" onClick={handleClickToggleMenu}>
