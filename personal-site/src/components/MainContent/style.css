@@ -16,7 +16,6 @@
 .find-skills {
     display: flex;
     justify-content: space-around;
-    text-align: center;
     color: #FFFFFF;
     font-family: Poppins, 'Courier New', Courier, monospace;
     font-size: 20px;
@@ -28,8 +27,36 @@ h3 {
     padding-left: 5rem;
 }
 
-img:hover {
-    margin: 5px solid red;
+.item-skill {
+    display: flex;
+    justify-content: space-around;
+}
+
+.item {
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    margin: 12px;
+    top:0;
+    position:relative;
+    -webkit-transition: top 0.4s ease-out;
+    -moz-transition: top 0.4s ease-out;
+    -o-transition: top 0.4s ease-out;
+}
+
+.item:hover {
+    top: -12px;
+}
+
+.item-skill img {
+    width: 30px;
+    height: 30px;
+    padding-top: 7px;
+    padding-left: 10px;
+}
+
+.item-findme {
+    display: flex;
+    justify-content: center;
 }
 
 .icons {
@@ -45,11 +72,4 @@ img:hover {
 
 .icons:hover {
     top: -12px;
-}
-
-.item img {
-    width: 30px;
-    height: 30px;
-    padding-top: 7px;
-    padding-left: 10px;
 }
