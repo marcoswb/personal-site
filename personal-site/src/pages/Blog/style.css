@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+
+.header-posts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-post h2 {
+    font-family: Poppins, 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+    font-size: 2.2rem;
+}
+
+#search-input {
+    background: #FFFFFF;
+    margin-right: 1rem;
+    margin-top: 2.5rem;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+#search-button {
+    color: #FFFFFF;
+    background-color: #47333c;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid;
+    margin: 20px;
+    cursor: pointer;
+}
+
+#search-button:hover {
+    color: #47333c;
+    background-color: #FFFFFF;
+}
+
+.post-item {
+    font-family: Poppins, 'Courier New', Courier, monospace;
+    color: #FFFFFF;
+    line-height: 0.5rem;
+    border-radius: 5px;
+    border:1px solid #FFFFFF;
+    margin-bottom: 1rem;
+    position:relative;
+    -webkit-transition: top 0.4s ease-out;
+    -moz-transition: top 0.4s ease-out;
+    -o-transition: top 0.4s ease-out;
+}
+
+.post-item:hover {
+    cursor: pointer;
+    border:2px solid #FFFFFF;
+    top: -5px;
+}
+
+h4 {
+    color: #eda85f;
+    font-size: 1.5rem;
+    margin-left: 0.8rem;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-left: 0.8rem;
+}
+
+.date {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+
+@media screen and (max-width: 550px) {
+
+    .header-posts {
+        flex-direction: column;
+    }
+
+    #search-input {
+        margin-top: 0.5rem;
+    }
+    
+    #search-button {
+        padding: 8px;
+    }
+
+}
