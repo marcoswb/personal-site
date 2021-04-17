@@ -8,7 +8,7 @@ import java from '../../resource/logo/java.png'
 import perl from '../../resource/logo/perl.png'
 import SQL from '../../resource/logo/SQL.png'
 import AWK from '../../resource/logo/AWK.png'
-import batch from '../../resource/logo/batch.png'
+import python from '../../resource/logo/python.png'
 import react from '../../resource/logo/react.png'
 import git from '../../resource/logo/git.png'
 
@@ -41,8 +41,8 @@ export default function MainContent(){
                         </div>
                         <div class="item-skill">
                             <div class="item">
-                                <span>React</span>
-                                <img src={react} alt="logo React"/>
+                                <span>Python</span>
+                                <img src={python} alt="logo Python"/>
                             </div>
                             <div class="item">
                                 <span>SQL</span>
@@ -51,22 +51,22 @@ export default function MainContent(){
                         </div>
                         <div class="item-skill">
                             <div class="item">
-                                <span>Git</span>
-                                <img src={git} alt="logo git"/>
+                                <span>React</span>
+                                <img src={react} alt="logo React"/>
                             </div>
                             <div class="item">
-                                <span>Perl</span>
-                                <img src={perl} alt="logo perl"/>
+                                <span>Git</span>
+                                <img src={git} alt="logo git"/>
                             </div>
                         </div>
                         <div class="item-skill">
                             <div class="item">
-                                <span>AWK</span>
-                                <img src={AWK} alt="logo AWK"/>
+                                <span>Perl</span>
+                                <img src={perl} alt="logo perl"/>
                             </div>
                             <div class="item">
-                                <span>Batch Script</span>
-                                <img src={batch} alt="logo Batch Script"/>
+                                <span>AWK</span>
+                                <img src={AWK} alt="logo AWK"/>
                             </div>
                         </div>
                     </div>
