@@ -8,12 +8,12 @@ export default function Experience(){
     return(
         <>
             <Navbar />
-            <div class="experience">
+            <div className="experience">
                 <h2>Experiência</h2>
-                <div class="item-experience">
+                <div className="item-experience">
                    <h4>Thomson Reuters Corporation</h4>
                    <p>Desenvolvedor ETL</p>
-                   <span class="duration">Abril - 2020</span>
+                   <span className="duration">Abril - 2020</span>
                 </div>
             </div>
         </>

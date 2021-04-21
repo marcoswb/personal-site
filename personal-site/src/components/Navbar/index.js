@@ -38,6 +38,9 @@ export default function Navbar(){
                         <a href="/formation">Formação</a>
                     </li>
                     <li>
+                        <a href="/projects">Projetos</a>
+                    </li>
+                    <li>
                         <a href="/blog">Blog</a>
                     </li>
                     <li>

@@ -23,26 +23,26 @@ export default function Contacts(){
         <>
             <Navbar />
 
-            <div class="contacts">
+            <div className="contacts">
                 <h2>Contatos</h2>
-                <div class="item">
+                <div className="item">
                     <a href={process.env.REACT_APP_LINKEDIN_LINK} target="_blank">
-                        <img src={linkedin} alt="logo linkedin" class="icon"/>
+                        <img src={linkedin} alt="logo linkedin" className="icon"/>
                         <span>LinkedIn</span>
                     </a>
                 </div>
-                <div class="item">
+                <div className="item">
                     <a href={process.env.REACT_APP_GITHUB_LINK} target="_blank">
-                        <img src={github} alt="logo github" class="icon"/>
+                        <img src={github} alt="logo github" className="icon"/>
                         <span>Github</span>
                     </a>
                 </div>
-                <div class="item" onClick={openEmail}>
-                    <img src={email} alt="logo email" class="icon"/>
+                <div className="item" onClick={openEmail}>
+                    <img src={email} alt="logo email" className="icon"/>
                     <span>E-mail</span>
                 </div>
-                <div class="item" onClick={openWhatsapp}>
-                    <img src={whatsapp} alt="logo whatsapp" class="icon"/>
+                <div className="item" onClick={openWhatsapp}>
+                    <img src={whatsapp} alt="logo whatsapp" className="icon"/>
                     <span>Whatsapp</span>
                 </div>
             </div>
