@@ -15,79 +15,85 @@ import git from '../../resource/logo/git.png'
 import './style.css'
 
 export default function MainContent(){
+
+    function openEmail(){
+        window.open(`mailto:${process.env.REACT_APP_EMAIL}?subject=Contato%20via%20site`)
+    }
+
     return(
         <>
-            <div class="content">
-                <div class="about">
-                    <p>
-                        Um graduando de ciência da computação, solucionador de problemas e pensador 
-                        crítico. Qualquer que seja a função que tenha exercido, sempre busquei trazer 
-                        um ponto de vista lógico, focado em entender o problema e desenvolver a melhor 
-                        estratégia de solução para o mesmo.
-                    </p>
+            <div className="content">
+                <div className="about">
+                    <p>{process.env.REACT_APP_ABOUT}</p>
                 </div>
-                <div class="find-skills">
-                    <div>
-                        <h3>Skills</h3>
-                        <div class="item-skill">
-                            <div class="item">
-                                <span>Java</span>
-                                <img src={java} alt="logo java"/>
-                            </div>
-                            <div class="item">
-                                <span>JavaScript</span>
-                                <img src={javacript} alt="logo javascrip"/>
-                            </div>
+                <div className="find-skills">
+                    <div className="container-itens">
+                        <div className="header-skill">
+                            <h3>Skills</h3>
                         </div>
-                        <div class="item-skill">
-                            <div class="item">
-                                <span>Python</span>
-                                <img src={python} alt="logo Python"/>
+                        <div className="container-skill">
+                            <div className="item-skill">
+                                <div className="item">
+                                    <span>Java</span>
+                                    <img src={java} alt="logo java"/>
+                                </div>
+                                <div className="item">
+                                    <span>JavaScript</span>
+                                    <img src={javacript} alt="logo javascript"/>
+                                </div>
                             </div>
-                            <div class="item">
-                                <span>SQL</span>
-                                <img src={SQL} alt="logo SQL"/>
+                            <div className="item-skill">
+                                <div className="item">
+                                    <span>Python</span>
+                                    <img src={python} alt="logo Python"/>
+                                </div>
+                                <div className="item">
+                                    <span>SQL</span>
+                                    <img src={SQL} alt="logo SQL"/>
+                                </div>
                             </div>
-                        </div>
-                        <div class="item-skill">
-                            <div class="item">
-                                <span>React</span>
-                                <img src={react} alt="logo React"/>
+                            <div className="item-skill">
+                                <div className="item">
+                                    <span>React</span>
+                                    <img src={react} alt="logo React"/>
+                                </div>
+                                <div className="item">
+                                    <span>Git</span>
+                                    <img src={git} alt="logo git"/>
+                                </div>
                             </div>
-                            <div class="item">
-                                <span>Git</span>
-                                <img src={git} alt="logo git"/>
-                            </div>
-                        </div>
-                        <div class="item-skill">
-                            <div class="item">
-                                <span>Perl</span>
-                                <img src={perl} alt="logo perl"/>
-                            </div>
-                            <div class="item">
-                                <span>AWK</span>
-                                <img src={AWK} alt="logo AWK"/>
+                            <div className="item-skill">
+                                <div className="item">
+                                    <span>Perl</span>
+                                    <img src={perl} alt="logo perl"/>
+                                </div>
+                                <div className="item">
+                                    <span>AWK</span>
+                                    <img src={AWK} alt="logo AWK"/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div>
-                        <div class="item-findme">
+                    <div className="container-itens">
+                        <div className="header-findme">
                             <h3>Encontre-me</h3>
                         </div>
-                        <div class="item-findme">
-                            <a href="https://www.linkedin.com/in/marcos-warmling/" target="_blank">
-                                <img src={linkedin} alt="logo linkedin" class="icons"/>
-                            </a>
-                        </div>
-                        <div class="item-findme">
-                            <a href="https://www.github.com/marcoswb" target="_blank">
-                                <img src={github} alt="logo github" class="icons"/>
-                            </a>
-                        </div>
-                        <div class="item-findme">
-                            <a href="#" target="_blank">
-                                <img src={email} alt="logo email" class="icons"/>
-                            </a>
+                        <div className="container-findme">
+                            <div className="item-findme">
+                                <a href={process.env.REACT_APP_LINKEDIN_LINK} target="_blank">
+                                    <img src={linkedin} alt="logo linkedin" className="icons"/>
+                                </a>
+                            </div>
+                            <div className="item-findme">
+                                <a href={process.env.REACT_APP_GITHUB_LINK} target="_blank">
+                                    <img src={github} alt="logo github" className="icons"/>
+                                </a>
+                            </div>
+                            <div className="item-findme">
+                                <a onClick={openEmail}>
+                                    <img src={email} alt="logo email" className="icons"/>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

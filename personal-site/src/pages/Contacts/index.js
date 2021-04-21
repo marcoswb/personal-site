@@ -1,5 +1,9 @@
 import React from 'react'
+
 import Navbar from '../../components/Navbar'
+import NumberModal from '../../components/NumberModal'
+import EmailModal from '../../components/EmailModal'
+
 import linkedin from '../../resource/logo/linkedin.png'
 import github from '../../resource/logo/github.png'
 import email from '../../resource/logo/email.png'
@@ -12,6 +16,7 @@ export default function Contacts(){
     return(
         <>
             <Navbar />
+
             <div class="contacts">
                 <h2>Contatos</h2>
                 <div class="item">
@@ -27,16 +32,12 @@ export default function Contacts(){
                     </a>
                 </div>
                 <div class="item">
-                    <a href="#" target="_blank">
                         <img src={email} alt="logo email" class="icon"/>
-                        <span>E-mail</span>
-                    </a>
+                        <EmailModal />
                 </div>
                 <div class="item">
-                    <a href="#" target="_blank">
-                        <img src={whatsapp} alt="logo celular" class="icon"/>
-                        <span>Celular</span>
-                    </a>
+                    <img src={whatsapp} alt="logo celular" class="icon"/>
+                    <NumberModal />
                 </div>
             </div>
         </>

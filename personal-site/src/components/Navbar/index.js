@@ -24,7 +24,9 @@ export default function Navbar(){
     return (
         <>
             <nav>
-                <h1>Marcos Warmling Berti</h1>
+                <h1>
+                    <a href="/">{process.env.REACT_APP_FULL_NAME}</a>
+                </h1>
                 <ul id="navbar">
                     <li>
                         <a href="/">Home</a>
@@ -42,7 +44,7 @@ export default function Navbar(){
                         <a href="/contacts">Contatos</a>
                     </li>
                 </ul>
-                <div class="nav__icon" onClick={handleClickToggleMenu}>
+                <div className="nav__icon" onClick={handleClickToggleMenu}>
                     <span></span>
                     <span></span>
                     <span></span>

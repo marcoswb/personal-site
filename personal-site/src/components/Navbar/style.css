@@ -15,6 +15,14 @@ h1 {
 	color: #FFF;
 }
 
+h1 a {
+    margin-left: 10px;
+    margin-right: auto;
+	font-size: 24px;
+	font-family: 'Rock Salt', cursive;
+	color: #FFF;
+}
+
 ul {
 	display: -webkit-flex;
 	display: flex;
