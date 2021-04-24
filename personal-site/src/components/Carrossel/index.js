@@ -1,7 +1,7 @@
 import React from 'react'
 
 import './style.css'
-import perfilImage from '../../resource/perfil.png'
+import perfilImage from '../../resource/images/perfil.png'
 
 export default function Carrossel(){
 

@@ -2,10 +2,10 @@ import React from 'react'
 
 import Navbar from '../../components/Navbar'
 
-import linkedin from '../../resource/logo/linkedin.png'
-import github from '../../resource/logo/github.png'
-import email from '../../resource/logo/email.png'
-import whatsapp from '../../resource/logo/whatsapp.png'
+import linkedin from '../../resource/images/linkedin.png'
+import github from '../../resource/images/github.png'
+import email from '../../resource/images/email.png'
+import whatsapp from '../../resource/images/whatsapp.png'
 
 import './style.css'
 

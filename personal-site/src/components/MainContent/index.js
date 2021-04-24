@@ -1,16 +1,14 @@
 import React from 'react'
 
-import linkedin from '../../resource/logo/linkedin.png'
-import github from '../../resource/logo/github.png'
-import email from '../../resource/logo/email.png'
-import javacript from '../../resource/logo/javascript.png'
-import java from '../../resource/logo/java.png'
-import perl from '../../resource/logo/perl.png'
-import SQL from '../../resource/logo/SQL.png'
-import AWK from '../../resource/logo/AWK.png'
-import python from '../../resource/logo/python.png'
-import react from '../../resource/logo/react.png'
-import git from '../../resource/logo/git.png'
+import linkedin from '../../resource/images/linkedin.png'
+import github from '../../resource/images/github.png'
+import email from '../../resource/images/email.png'
+import javacript from '../../resource/images/javascript.png'
+import java from '../../resource/images/java.png'
+import SQL from '../../resource/images/SQL.png'
+import python from '../../resource/images/python.png'
+import react from '../../resource/images/react.png'
+import git from '../../resource/images/git.png'
 
 import './style.css'
 
@@ -60,16 +58,6 @@ export default function MainContent(){
                                 <div className="item">
                                     <span>Git</span>
                                     <img src={git} alt="logo git"/>
-                                </div>
-                            </div>
-                            <div className="item-skill">
-                                <div className="item">
-                                    <span>Perl</span>
-                                    <img src={perl} alt="logo perl"/>
-                                </div>
-                                <div className="item">
-                                    <span>AWK</span>
-                                    <img src={AWK} alt="logo AWK"/>
                                 </div>
                             </div>
                         </div>
