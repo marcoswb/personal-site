@@ -79,17 +79,16 @@ personal-site
 │   │       └── style.css
 │   ├── resource/
 │   │   ├── images/
-│   │   │   ├── AWK.png
-│   │   │   ├── SQL.png
 │   │   │   ├── email.png
 │   │   │   ├── git.png
 │   │   │   ├── github.png
 │   │   │   ├── java.png
 │   │   │   ├── javascript.png
 │   │   │   ├── linkedin.png
-│   │   │   ├── perl.png
+│   │   │   ├── perfil.png
 │   │   │   ├── python.png
 │   │   │   ├── react.png
+│   │   │   ├── SQL.png
 │   │   │   └── whatsapp.png
 │   │   ├── blog-posts.json
 │   │   └── projects.json
@@ -158,9 +157,9 @@ Nesta seção haverão instruções caso você queira editar o template, explica
     
     - **images** - Diretório utilizado para armazenar todas as imagens da aplicação;
 
-      - **blog-posts.json** - Arquivo onde você pode colocar todos os posts que fez no Medium por exemplo, e eles serão listados na página 'Blog', pode também adicionar 'tags' que servirão para pesquisa dentro dessa mesma página;
+    - **blog-posts.json** - Arquivo onde você pode colocar todos os posts que fez no Medium por exemplo, e eles serão listados na página 'Blog', pode também adicionar 'tags' que servirão para pesquisa dentro dessa mesma página;
   
-      - **projects.json** - Arquivo onde você pode colocar todos os projetos que fez e estão hospedados no Github por exemplo, e eles serão listados na página 'Projetos', pode também adicionar 'techs' que servirão para pesquisa dentro dessa mesma página;
+    - **projects.json** - Arquivo onde você pode colocar todos os projetos que fez e estão hospedados no Github por exemplo, e eles serão listados na página 'Projetos', pode também adicionar 'techs' que servirão para pesquisa dentro dessa mesma página;
 
   - **App.css** - Arquivo responsável por ser um arquivo css 'global' para a aplicação;
 
@@ -169,7 +168,7 @@ Nesta seção haverão instruções caso você queira editar o template, explica
   - **index.js** - Arquivo responsável por centralizar o código do diretório `src`, nele são chamadas quaisquer configurações que precisem ser executadas na inicialização da aplicação, ele é como um _Entry Point_ do diretório `src`;
   
   - **routes.js** - Arquivo com as configurações de navegação da aplicação, nele são criados as rotas através da biblioteca 'react-router-dom';
-  - 
+  
 - **.env** - Arquivo que armazena as variáveis de ambiente da aplicação`(você deve criar esse arquivo)`, dentre elas estão:
   - `REACT_APP_NAME` -> armazena seu primeiro nome;
   - `REACT_APP_FULL_NAME` -> armazena seu nome completo;
