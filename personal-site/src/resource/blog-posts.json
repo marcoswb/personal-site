@@ -1,8 +1,8 @@
 [
     {
-        "title":"Nenhum post publicado",
-        "description": "",
-        "tags": "",
-        "link":""
+        "title":"Entendendo a estrutura de diretórios Linux",
+        "description": "Explicando um pouco sobre o FHS do sistema Linux.",
+        "tags": "tech, linux, filesystem, open source",
+        "link":"https://marcoswb.medium.com/entendendo-a-estrutura-de-diret%C3%B3rios-linux-597923a52aa9"
     }
 ]
