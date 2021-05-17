@@ -4,5 +4,11 @@
         "description": "Explicando um pouco sobre o FHS do sistema Linux.",
         "tags": "tech, linux, filesystem, open source",
         "link":"https://marcoswb.medium.com/entendendo-a-estrutura-de-diret%C3%B3rios-linux-597923a52aa9"
+    },
+    {
+        "title":"Processo de boot do Linux",
+        "description": "Do Power ao Init",
+        "tags": "tech, linux, grub, open source",
+        "link":"https://marcoswb.medium.com/processo-de-boot-do-linux-dd95017f5e31"
     }
 ]
