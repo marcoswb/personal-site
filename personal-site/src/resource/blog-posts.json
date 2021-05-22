@@ -10,5 +10,11 @@
         "description": "Do Power ao Init",
         "tags": "tech, linux, grub, open source",
         "link":"https://marcoswb.medium.com/processo-de-boot-do-linux-dd95017f5e31"
+    },
+    {
+        "title":"Configurações do Grub",
+        "description": "Ententendo a fundo o Grub",
+        "tags": "tech, linux, grub, open source, bootloader",
+        "link":"https://marcoswb.medium.com/configura%C3%A7%C3%B5es-do-grub-8347e291587c"
     }
 ]
