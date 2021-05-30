@@ -4,7 +4,7 @@ import linkedin from '../../resource/images/linkedin.png'
 import github from '../../resource/images/github.png'
 import email from '../../resource/images/email.png'
 import javacript from '../../resource/images/javascript.png'
-import java from '../../resource/images/java.png'
+import linux from '../../resource/images/linux.png'
 import SQL from '../../resource/images/SQL.png'
 import python from '../../resource/images/python.png'
 import react from '../../resource/images/react.png'
@@ -31,9 +31,9 @@ export default function MainContent(){
                         </div>
                         <div className="container-skill">
                             <div className="item-skill">
-                                <div className="item">
-                                    <span>Java</span>
-                                    <img src={java} alt="logo java"/>
+                            <div className="item">
+                                    <span>Python</span>
+                                    <img src={python} alt="logo Python"/>
                                 </div>
                                 <div className="item">
                                     <span>JavaScript</span>
@@ -42,8 +42,8 @@ export default function MainContent(){
                             </div>
                             <div className="item-skill">
                                 <div className="item">
-                                    <span>Python</span>
-                                    <img src={python} alt="logo Python"/>
+                                    <span>Git</span>
+                                    <img src={git} alt="logo git"/>
                                 </div>
                                 <div className="item">
                                     <span>SQL</span>
@@ -56,8 +56,8 @@ export default function MainContent(){
                                     <img src={react} alt="logo React"/>
                                 </div>
                                 <div className="item">
-                                    <span>Git</span>
-                                    <img src={git} alt="logo git"/>
+                                    <span>Linux</span>
+                                    <img src={linux} alt="logo java"/>
                                 </div>
                             </div>
                         </div>
