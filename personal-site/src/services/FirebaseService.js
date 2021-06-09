@@ -23,7 +23,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 full_name = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return full_name
@@ -37,7 +37,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 name = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return name
@@ -51,7 +51,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 number_phone = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return number_phone
@@ -65,7 +65,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 occupation = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return occupation
@@ -79,7 +79,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 email = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return email
@@ -93,7 +93,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 about = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return about
@@ -107,7 +107,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 linkedin = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return linkedin
@@ -121,7 +121,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 github = snapshot.val()
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return github
@@ -135,7 +135,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 experiences.push(snapshot.val())
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return experiences[0]
@@ -149,7 +149,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 formations.push(snapshot.val())
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return formations[0]
@@ -163,7 +163,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 projects.push(snapshot.val())
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return projects[0]
@@ -177,7 +177,7 @@ export default class FirebaseService {
             .then((snapshot) => {
                 posts.push(snapshot.val())
             }).catch((error) => {
-                alert(error)
+                console.log(error)
         })
 
         return posts[0]
