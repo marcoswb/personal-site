@@ -1,25 +1,30 @@
-import React from 'react'
-import Navbar from '../../components/Navbar'
+import React, {useEffect, useState} from 'react'
 
+import FirebaseService from '../../services/FirebaseService'
+import Navbar from '../../components/Navbar'
 import './style.css'
 
+
 export default function Formation(){
+
+    const [formations, setFormations] = useState([])
+
+    useEffect(async() => {
+        setFormations(await FirebaseService.getFormations())
+    }, [])
 
     return(
         <>
             <Navbar />
             <div className="formation">
                 <h2>Formação</h2>
-                <div className="item-formation">
-                   <h4>CEDUP - Centro de Educação Profissional Abílio Paulo</h4>
-                   <p>Curso Técnico Profissionalizante em programação</p>
-                   <span className="duration">Concluído: Fevereiro - 2017 à Dezembro - 2019</span>
-                </div>
-                <div className="item-formation">
-                   <h4>UNESC - Universidade do Extremo Sul Catarinense</h4>
-                   <p>Graduação em Ciência da Computação</p>
-                   <span className="duration">Cursando: Janeiro - 2020 à Junho - 2024(finalização prevista)</span>
-                </div>
+                {formations.map(formation => (
+                    <div key={formation["id"]} className="item-formation">
+                        <h4 key={formation["id"]}>{formation["institution"]}</h4>
+                        <p key={formation["id"]}>{formation["curse"]}</p>
+                        <span key={formation["id"]} className="duration">{formation["duration"]}</span>
+                    </div>
+                ))}
             </div>
         </>
     )

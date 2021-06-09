@@ -1,9 +1,17 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import $ from 'jquery'
 
+import FirebaseService from '../../services/FirebaseService'
 import './style.css'
 
+
 export default function Navbar(){
+
+    const [full_name, setFullName] = useState('')
+
+    useEffect(async() => {
+        setFullName(await FirebaseService.getFullName())
+    }, [])
 
     $(window).on('load resize',function(){
         var w = $(window).width();
@@ -25,7 +33,7 @@ export default function Navbar(){
         <>
             <nav>
                 <h1>
-                    <a href="/">{process.env.REACT_APP_FULL_NAME}</a>
+                    <a href="/">{full_name}</a>
                 </h1>
                 <ul id="navbar">
                     <li>

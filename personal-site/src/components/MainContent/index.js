@@ -1,28 +1,41 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 
-import linkedin from '../../resource/images/linkedin.png'
-import github from '../../resource/images/github.png'
-import email from '../../resource/images/email.png'
-import javacript from '../../resource/images/javascript.png'
-import linux from '../../resource/images/linux.png'
-import SQL from '../../resource/images/SQL.png'
-import python from '../../resource/images/python.png'
-import react from '../../resource/images/react.png'
-import git from '../../resource/images/git.png'
-
+import FirebaseService from '../../services/FirebaseService'
+import logo_linkedin from '../../images/linkedin.png'
+import logo_github from '../../images/github.png'
+import logo_email from '../../images/email.png'
+import logo_javacript from '../../images/javascript.png'
+import logo_linux from '../../images/linux.png'
+import logo_SQL from '../../images/SQL.png'
+import logo_python from '../../images/python.png'
+import logo_react from '../../images/react.png'
+import logo_git from '../../images/git.png'
 import './style.css'
+
 
 export default function MainContent(){
 
+    const [email, setEmail] = useState('')
+    const [about, setAbout] = useState('')
+    const [linkedin, setLinkedin] = useState('')
+    const [github, setGithub] = useState('')
+
+    useEffect(async() => {
+        setEmail(await FirebaseService.getEmail())
+        setAbout(await FirebaseService.getAbout())
+        setLinkedin(await FirebaseService.getLinkedin())
+        setGithub(await FirebaseService.getGithub())
+    }, [])
+
     function openEmail(){
-        window.open(`mailto:${process.env.REACT_APP_EMAIL}?subject=Contato%20via%20site`)
+        window.open(`mailto:${email}?subject=Contato%20via%20site`)
     }
 
     return(
         <>
             <div className="content">
                 <div className="about">
-                    <p>{process.env.REACT_APP_ABOUT}</p>
+                    <p>{about}</p>
                 </div>
                 <div className="find-skills">
                     <div className="container-itens">
@@ -33,31 +46,31 @@ export default function MainContent(){
                             <div className="item-skill">
                             <div className="item">
                                     <span>Python</span>
-                                    <img src={python} alt="logo Python"/>
+                                    <img src={logo_python} alt="logo Python"/>
                                 </div>
                                 <div className="item">
                                     <span>JavaScript</span>
-                                    <img src={javacript} alt="logo javascript"/>
+                                    <img src={logo_javacript} alt="logo javascript"/>
                                 </div>
                             </div>
                             <div className="item-skill">
                                 <div className="item">
                                     <span>Git</span>
-                                    <img src={git} alt="logo git"/>
+                                    <img src={logo_git} alt="logo git"/>
                                 </div>
                                 <div className="item">
                                     <span>SQL</span>
-                                    <img src={SQL} alt="logo SQL"/>
+                                    <img src={logo_SQL} alt="logo SQL"/>
                                 </div>
                             </div>
                             <div className="item-skill">
                                 <div className="item">
                                     <span>React</span>
-                                    <img src={react} alt="logo React"/>
+                                    <img src={logo_react} alt="logo React"/>
                                 </div>
                                 <div className="item">
                                     <span>Linux</span>
-                                    <img src={linux} alt="logo java"/>
+                                    <img src={logo_linux} alt="logo java"/>
                                 </div>
                             </div>
                         </div>
@@ -68,18 +81,18 @@ export default function MainContent(){
                         </div>
                         <div className="container-findme">
                             <div className="item-findme">
-                                <a href={process.env.REACT_APP_LINKEDIN_LINK} target="_blank">
-                                    <img src={linkedin} alt="logo linkedin" className="icons"/>
+                                <a href={linkedin} target="_blank">
+                                    <img src={logo_linkedin} alt="logo linkedin" className="icons"/>
                                 </a>
                             </div>
                             <div className="item-findme">
-                                <a href={process.env.REACT_APP_GITHUB_LINK} target="_blank">
-                                    <img src={github} alt="logo github" className="icons"/>
+                                <a href={github} target="_blank">
+                                    <img src={logo_github} alt="logo github" className="icons"/>
                                 </a>
                             </div>
                             <div className="item-findme">
                                 <a onClick={openEmail}>
-                                    <img src={email} alt="logo email" className="icons"/>
+                                    <img src={logo_email} alt="logo email" className="icons"/>
                                 </a>
                             </div>
                         </div>

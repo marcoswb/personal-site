@@ -8,6 +8,7 @@ import Projects from './pages/Projects'
 import Blog from './pages/Blog'
 import Contacts from './pages/Contacts'
 
+
 export default function Routes(){
     return (
         <BrowserRouter>

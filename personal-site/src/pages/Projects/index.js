@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from 'react'
 
+import FirebaseService from '../../services/FirebaseService'
 import Navbar from '../../components/Navbar'
-import data from '../../resource/projects.json'
-
 import './style.css'
+
 
 export default function Projects(){
     
-    const [valueFind, setValueFind] = useState('')
+    const [techFind, setTechFind] = useState('')
     const [projects, setProjects] = useState([])
     
-    useEffect(() => {
-        setProjects(data)
+    useEffect(async() => {
+        setProjects(await FirebaseService.getProjects())
     }, [])
 
-    function handleClick(){
-        setProjects(data)
+    async function handleClick(){
+        setProjects(await FirebaseService.getProjects())
 
-        findProjects(data)
+        findProjects(await FirebaseService.getProjects())
     }
 
     function findProjects(projects){
-        const projectsFilter = projects.filter(item => {
-            const valueLowerCase = item.techs.toLowerCase()
-            const valueFindLowerCase = valueFind.toLowerCase()
-            if(valueLowerCase.includes(valueFindLowerCase)){
-                return item
+        const projectsFilter = projects.filter(project => {
+            if(project["techs"].toLowerCase().includes(techFind.toLowerCase())){
+                return project
             }
         })
+
         setProjects(projectsFilter)
     }
 
@@ -42,19 +41,19 @@ export default function Projects(){
                             type="text" 
                             id="search-input" 
                             placeholder="Procure por uma linguagem"
-                            value={valueFind}
-                            onChange={event => setValueFind(event.target.value)}
+                            value={techFind}
+                            onChange={event => setTechFind(event.target.value)}
                             onKeyUp={handleClick}
                         />
                         <button id="search-button" onClick={handleClick}>Pesquisar</button>
                     </div>
                 </div>
-                {projects.map(item => (
-                    <a href={item.link} target="_blank">
+                {projects.map(projeto => (
+                    <a href={projeto["link"]} target="_blank">
                         <div className="project-item">
-                                <h4>{item.title}</h4>
-                                <p className="description">{item.description}</p>
-                                <p className="techs">{item.techs}</p>
+                                <h4>{projeto["title"]}</h4>
+                                <p className="description">{projeto["description"]}</p>
+                                <p className="techs">{projeto["techs"]}</p>
                         </div>
                     </a>
                 ))}

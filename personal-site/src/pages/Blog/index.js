@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from 'react'
 
+import FirebaseService from '../../services/FirebaseService'
 import Navbar from '../../components/Navbar'
-import data from '../../resource/blog-posts.json'
-
 import './style.css'
+
 
 export default function Blog(){
 
-    const [valueFind, setValueFind] = useState('')
+    const [themeFind, setThemeFind] = useState('')
     const [posts, setPosts] = useState([])
     
-    useEffect(() => {
-        setPosts(data)
+    useEffect(async() => {
+        setPosts(await FirebaseService.getPosts())
     }, [])
 
-    function handleClick(){
-        setPosts(data)
+    async function handleClick(){
+        setPosts(await FirebaseService.getPosts())
 
-        findPosts(data)
+        findPosts(await FirebaseService.getPosts())
     }
 
     function findPosts(posts){
-        const postsFilter = posts.filter(item => {
-            const valueLowerCase = item.tags.toLowerCase()
-            const valueFindLowerCase = valueFind.toLowerCase()
-            if(valueLowerCase.includes(valueFindLowerCase)){
-                return item
+        const postsFilter = posts.filter(post => {
+            if(post["tags"].toLowerCase().includes(themeFind.toLowerCase())){
+                return post
             }
         })
+
         setPosts(postsFilter)
     }
 
@@ -42,19 +41,19 @@ export default function Blog(){
                             type="text" 
                             id="search-input" 
                             placeholder="Procure um tema/post"
-                            value={valueFind}
-                            onChange={event => setValueFind(event.target.value)}
+                            value={themeFind}
+                            onChange={event => setThemeFind(event.target.value)}
                             onKeyUp={handleClick}
                         />
                         <button id="search-button">Pesquisar</button>
                     </div>
                 </div>
-                {posts.map(item => (
-                    <a href={item.link} target="_blank">
+                {posts.map(post => (
+                    <a href={post["link"]} target="_blank">
                         <div className="project-item">
-                                <h4>{item.title}</h4>
-                                <p className="description">{item.description}</p>
-                                <p className="techs">{item.techs}</p>
+                                <h4>{post["title"]}</h4>
+                                <p className="description">{post["description"]}</p>
+                                <p className="techs">{post["techs"]}</p>
                         </div>
                     </a>
                 ))}

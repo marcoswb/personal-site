@@ -1,14 +1,16 @@
 import React from 'react'
-import './App.css';
+import { FirebaseDatabaseProvider } from "@react-firebase/database"
 
 import Routes from './routes'
+import './App.css'
 
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <Routes/>
-    </div>
+    <FirebaseDatabaseProvider>
+      <div className="App">
+        <Routes/>
+      </div>
+    </FirebaseDatabaseProvider>
   )
 }
-
-export default App;
