@@ -30,6 +30,8 @@ Abaixo segue o que foi utilizado na criação deste template:
 
 - [React](https://github.com/facebook/react) - O React é uma biblioteca JavaScript de código aberto com foco em criar interfaces de usuário em páginas web;
 
+- [Firebase](https://firebase.google.com/) - O Firebase é uma plataforma desenvolvida pelo Google para a criação de aplicativos móveis e da web;
+
 <!-- GETTING STARTED -->
 
 ## Começando
@@ -47,51 +49,62 @@ personal-site
 │   ├── index.html
 │   ├── manifest.json
 │   └── robots.txt
+|
 ├── src/
 │   ├── components/
 │   │   ├── Carrossel/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   ├── MainContent/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   └── NavBar/
 │   │       ├── index.js
 │   │       └── style.css
+|   |
+|   ├── images/
+│   │   ├── email.png
+│   │   ├── git.png
+│   │   ├── github.png
+│   │   ├── javascript.png
+│   │   ├── linkedin.png
+│   │   ├── linux.png
+│   │   ├── perfil.png
+│   │   ├── python.png
+│   │   ├── react.png
+│   │   ├── SQL.png
+│   │   └── whatsapp.png
+|   |
 │   ├── pages/
 │   │   ├── Blog/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   ├── Contacts/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   ├── Experience/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   ├── Formation/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   ├── Home/
 │   │   │   ├── index.js
 │   │   │   └── style.css
+|   |   |
 │   │   └── Projects/
 │   │       ├── index.js
 │   │       └── style.css
-│   ├── resource/
-│   │   ├── images/
-│   │   │   ├── email.png
-│   │   │   ├── git.png
-│   │   │   ├── github.png
-│   │   │   ├── java.png
-│   │   │   ├── javascript.png
-│   │   │   ├── linkedin.png
-│   │   │   ├── perfil.png
-│   │   │   ├── python.png
-│   │   │   ├── react.png
-│   │   │   ├── SQL.png
-│   │   │   └── whatsapp.png
-│   │   ├── blog-posts.json
-│   │   └── projects.json
+|   |
+│   ├── services/
+│   │   └── FirebaseService.js
+|   |
 │   ├── App.css
 │   ├── App.js
 │   ├── index.js
@@ -99,8 +112,7 @@ personal-site
 ├── .env
 ├── .gitignore
 ├── README.md
-├── package.json
-└── package-lock.json
+└── package.json
 ```
 
 Serão explicados os arquivos e diretórios na seção de [Edição](#edição).
@@ -125,7 +137,7 @@ cd personal-site
 npm install
 ```
 
-Com isso o projeto será criado com todas as dependências do template devidamente instaladas e linkadas.
+Com isso o projeto será criado com todas as dependências devidamente instaladas e linkadas.
 
 ---
 
@@ -144,22 +156,16 @@ Nesta seção haverão instruções caso você queira editar o template, explica
       - **index.js** - Arquivo com toda a lógica do componente, tal como os componentes visuais a serem renderizados;
 
       - **style.css** - Arquivo com a estilização do componente em css;
-
+      - 
+  - **images** - Diretório utilizado para armazenar todas as imagens da aplicação;
+  
   - **pages** - Diretório onde ficam as páginas (telas) da aplicação, como forma de padronização e boas práticas toda página fica dentro de um diretório com seu nome;
 
     - **Home** - Diretório exemplo de uma página cujo nome é **Home**, por padrão foi adotado usar sempre como nome do diretório o nome da página em camelCase, dentro desse diretório foi criado ao menos o arquivo `index.js` e o arquivo `style.css`;
+ 
+  - **services** - Diretório onde ficam os arquivos que se comunicam e manipulam dados do banco de dados;
 
-      - **index.js** - Arquivo com toda a lógica da página, tal como os componentes visuais a serem renderizados;
-
-      - **style.css** - Arquivo com a estilização da página em css;
-
-  - **resource** - Diretório para armazenar imagens e arquivos em geral que possam ser utilizados na aplicação;
-    
-    - **images** - Diretório utilizado para armazenar todas as imagens da aplicação;
-
-    - **blog-posts.json** - Arquivo onde você pode colocar todos os posts que fez no Medium por exemplo, e eles serão listados na página 'Blog', pode também adicionar 'tags' que servirão para pesquisa dentro dessa mesma página;
-  
-    - **projects.json** - Arquivo onde você pode colocar todos os projetos que fez e estão hospedados no Github por exemplo, e eles serão listados na página 'Projetos', pode também adicionar 'techs' que servirão para pesquisa dentro dessa mesma página;
+    - **FirebaseService.js** - Arquivo principal que faz todas as consultas ao Firebase;
 
   - **App.css** - Arquivo responsável por ser um arquivo css 'global' para a aplicação;
 
@@ -170,18 +176,27 @@ Nesta seção haverão instruções caso você queira editar o template, explica
   - **routes.js** - Arquivo com as configurações de navegação da aplicação, nele são criados as rotas através da biblioteca 'react-router-dom';
   
 - **.env** - Arquivo que armazena as variáveis de ambiente da aplicação`(você deve criar esse arquivo)`, dentre elas estão:
-  - `REACT_APP_NAME` -> armazena seu primeiro nome;
-  - `REACT_APP_FULL_NAME` -> armazena seu nome completo;
-  - `REACT_APP_OCCUPATION` -> armazena seu trabalho atual, que irá aparecer na Home Page;
-  - `REACT_APP_NUMBER_PHONE` -> armazena seu numero de Telefone, utilizado para a integração da aplicação com whatsapp;
-  - `REACT_APP_EMAIL` -> armazena seu email, utilizado para a integração da aplicação com o email
-  - `REACT_APP_LINKEDIN_LINK` -> armazena seu link de perfil do LinkedIn;
-  - `REACT_APP_GITHUB_LINK` -> armazena seu link de perfil do Github;
-  - `REACT_APP_ABOUT` -> armazena uma breve descrição sobre você, que irá aparecer na Home Page
+  - `REACT_APP_TITLE` -> armazena o texto que você quer que apareça no titulo da página;
+  - `REACT_APP_FIREBASE_API_KEY` -> variável "apiKey" do firebase;
+  - `REACT_APP_FIREBASE_AUTHDOMAIN` -> variável "authDomain" do firebase;
+  - `REACT_APP_FIREBASE_DATABASEURL` -> variável "databaseURL" do firebase;
+  - `REACT_APP_FIREBASE_PROJECTID` -> variável "projectId" do firebase;
+  - `REACT_APP_FIREBASE_STORAGEBUCKET` -> variável "storageBucket" do firebase;
+  - `REACT_APP_FIREBASE_MESSAGINGSENDERID` -> variável "messagingSenderId" do firebase;
+  - `REACT_APP_FIREBASE_APPID` -> variável "appId" do firebase;
+  - `REACT_APP_FIREBASE_MEASUREMENTID` -> variável "measurementId" do firebase;
   
 - **package.json** - Todas as configurações do projeto ficam salvos nesse arquivo.
 
 ### Publicação
+
+Para o armazenamento utilizei o [firebase](https://firebase.google.com/?hl=pt):
+
+1. Basta clicar [aqui](https://firebase.google.com/?hl=pt) e clicar em "Ir para o Console";
+
+2. Criar um novo projeto na plataforma;
+
+3. Depois de criado é só adicionar o Firebase ao projeto, para isso selecione "adicionar Firebase a um projeto web" e quando for fornecido o SDK do Firebase, copie o objeto "firebaseConfig", que vai ter as mesmas variáveis que estão presentes no arquivo .env do projeto, e dessa forma você só coloca os valores corretos nas variáveis de ambiente.
 
 Para fazer o deploy utilizei a [versel](https://vercel.com/):
 
