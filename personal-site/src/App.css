@@ -31,3 +31,7 @@
     color: #eda85f;
     cursor: pointer;
 }
+
+#submenu-item-right h3:hover {
+    cursor: pointer;
+}

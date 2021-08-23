@@ -15,14 +15,23 @@ export default function Projects(){
     }, [])
 
     async function handleClick(){
+        const tag = techFind.toLowerCase()
         setProjects(await FirebaseService.getProjects())
 
-        findProjects(await FirebaseService.getProjects())
+        findProjects(await FirebaseService.getProjects(), tag)
     }
 
-    function findProjects(projects){
+    async function handleClickSubmenu(self){
+        const tag = self.target.textContent.toLowerCase()
+        
+        setProjects(await FirebaseService.getProjects())
+
+        findProjects(await FirebaseService.getProjects(), tag)
+    }
+
+    function findProjects(projects, tag){
         const projectsFilter = projects.filter(project => {
-            if(project["techs"].toLowerCase().includes(techFind.toLowerCase())){
+            if(project["techs"].toLowerCase().includes(tag)){
                 return project
             }
         })
@@ -48,15 +57,34 @@ export default function Projects(){
                         <button id="search-button" onClick={handleClick}>Pesquisar</button>
                     </div>
                 </div>
-                {projects.map(projeto => (
-                    <a href={projeto["link"]} target="_blank">
-                        <div className="project-item">
-                                <h4>{projeto["title"]}</h4>
-                                <p className="description">{projeto["description"]}</p>
-                                <p className="techs">{projeto["techs"]}</p>
-                        </div>
-                    </a>
-                ))}
+                <div id="submenu-container">
+                    <div id="submenu-item-left">
+                        {projects.map(projeto => (
+                            <a href={projeto["link"]} target="_blank">
+                                <div className="project-item">
+                                        <h4>{projeto["title"]}</h4>
+                                        <p className="description">{projeto["description"]}</p>
+                                        <p className="techs">{projeto["techs"]}</p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                    <div id="submenu-item-right">
+                        <h3 onClick={handleClick}>Techs</h3>
+                        <ol>
+                            <li onClick={handleClickSubmenu}>JAVASCRIPT</li>
+                            <li onClick={handleClickSubmenu}>SHELL SCRIPT</li>
+                            <li onClick={handleClickSubmenu}>SPRING</li>
+                            <li onClick={handleClickSubmenu}>REACTJS</li>
+                            <li onClick={handleClickSubmenu}>ANGULAR</li>
+                            <li onClick={handleClickSubmenu}>NODEJS</li>
+                            <li onClick={handleClickSubmenu}>DOCKER</li>
+                            <li onClick={handleClickSubmenu}>MYSQL</li>
+                            <li onClick={handleClickSubmenu}>SQLITE</li>
+                            <li onClick={handleClickSubmenu}>MONGODB</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </>
     )
