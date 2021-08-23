@@ -1,0 +1,34 @@
+{
+  "Blog" : [ null, {
+    "description" : "Description",
+    "link" : "link to post",
+    "tags" : "TECH, OPEN SOURCE",
+    "title" : "TITLE"
+  }],
+  "Experience" : [ null, {
+    "company" : "Company",
+    "duration" : "Date",
+    "work" : "work"
+  } ],
+  "Formation" : [ null, {
+    "course" : "course",
+    "duration" : "duration",
+    "institution" : "institution"
+  }],
+  "General" : {
+    "about" : "about you.",
+    "email" : "email@gmail.com",
+    "full_name" : "Your full name",
+    "github" : "link github",
+    "linkedin" : "link linkedin",
+    "name" : "your name",
+    "number_phone" : 5548999999999,
+    "occupation" : "your occupation"
+  },
+  "Projects" : [ null, {
+    "description" : "description",
+    "link" : "link to project",
+    "techs" : "HTML, CSS",
+    "title" : "TITLE"
+  }]
+}

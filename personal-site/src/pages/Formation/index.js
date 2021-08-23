@@ -21,7 +21,7 @@ export default function Formation(){
                 {formations.map(formation => (
                     <div key={formation["id"]} className="item-formation">
                         <h4 key={formation["id"]}>{formation["institution"]}</h4>
-                        <p key={formation["id"]}>{formation["curse"]}</p>
+                        <p key={formation["id"]}>{formation["course"]}</p>
                         <span key={formation["id"]} className="duration">{formation["duration"]}</span>
                     </div>
                 ))}
