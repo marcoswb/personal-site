@@ -64,6 +64,9 @@ personal-site
 │   │       ├── index.js
 │   │       └── style.css
 |   |
+|   ├── database/
+│   |   └── template.json
+|   |
 |   ├── images/
 │   │   ├── email.png
 │   │   ├── git.png
@@ -156,7 +159,9 @@ Nesta seção haverão instruções caso você queira editar o template, explica
       - **index.js** - Arquivo com toda a lógica do componente, tal como os componentes visuais a serem renderizados;
 
       - **style.css** - Arquivo com a estilização do componente em css;
-      - 
+      
+  - **database** - Diretório que contém a estrutura básica do banco de dados;
+  
   - **images** - Diretório utilizado para armazenar todas as imagens da aplicação;
   
   - **pages** - Diretório onde ficam as páginas (telas) da aplicação, como forma de padronização e boas práticas toda página fica dentro de um diretório com seu nome;
@@ -197,6 +202,8 @@ Para o armazenamento utilizei o [firebase](https://firebase.google.com/?hl=pt):
 2. Criar um novo projeto na plataforma;
 
 3. Depois de criado é só adicionar o Firebase ao projeto, para isso selecione "adicionar Firebase a um projeto web" e quando for fornecido o SDK do Firebase, copie o objeto "firebaseConfig", que vai ter as mesmas variáveis que estão presentes no arquivo .env do projeto, e dessa forma você só coloca os valores corretos nas variáveis de ambiente.
+
+4. E por último importar a estrutura padrão do banco de dados, presente no arquivo template.json dentro do RealTime Database do seu Firebase.
 
 Para fazer o deploy utilizei a [versel](https://vercel.com/):
 
