@@ -70,7 +70,7 @@ export default function Blog(){
                         ))}
                     </div>
                     <div id="submenu-item-right">
-                        <h3>Assuntos</h3>
+                        <h3 onClick={handleClick}>Assuntos</h3>
                         <ol>
                             <li onClick={handleClickSubmenu}>LINUX</li>
                             <li onClick={handleClickSubmenu}>FILESYSTEM</li>
