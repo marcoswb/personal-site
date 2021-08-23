@@ -15,14 +15,23 @@ export default function Blog(){
     }, [])
 
     async function handleClick(){
+        const tag = themeFind.toLowerCase()
         setPosts(await FirebaseService.getPosts())
 
-        findPosts(await FirebaseService.getPosts())
+        findPosts(await FirebaseService.getPosts(), tag)
     }
 
-    function findPosts(posts){
+    async function handleClickSubmenu(self){
+        const tag = self.target.textContent.toLowerCase()
+        
+        setPosts(await FirebaseService.getPosts())
+
+        findPosts(await FirebaseService.getPosts(), tag)
+    }
+
+    function findPosts(posts, tag){
         const postsFilter = posts.filter(post => {
-            if(post["tags"].toLowerCase().includes(themeFind.toLowerCase())){
+            if(post["tags"].toLowerCase().includes(tag)){
                 return post
             }
         })
@@ -48,15 +57,30 @@ export default function Blog(){
                         <button id="search-button">Pesquisar</button>
                     </div>
                 </div>
-                {posts.map(post => (
-                    <a href={post["link"]} target="_blank">
-                        <div className="project-item">
-                                <h4>{post["title"]}</h4>
-                                <p className="description">{post["description"]}</p>
-                                <p className="techs">{post["techs"]}</p>
-                        </div>
-                    </a>
-                ))}
+                <div id="submenu-container">
+                    <div id="submenu-item-left">
+                        {posts.map(post => (
+                            <a href={post["link"]} target="_blank">
+                                <div className="project-item">
+                                        <h4>{post["title"]}</h4>
+                                        <p className="description">{post["description"]}</p>
+                                        <p className="techs">{post["techs"]}</p>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+                    <div id="submenu-item-right">
+                        <h3>Assuntos</h3>
+                        <ol>
+                            <li onClick={handleClickSubmenu}>LINUX</li>
+                            <li onClick={handleClickSubmenu}>FILESYSTEM</li>
+                            <li onClick={handleClickSubmenu}>FHS</li>
+                            <li onClick={handleClickSubmenu}>GRUB</li>
+                            <li onClick={handleClickSubmenu}>BOOTLOADER</li>
+                            <li onClick={handleClickSubmenu}>PACKAGE</li>
+                        </ol>
+                    </div>
+                </div>
             </div>
         </>
     )
