@@ -1,0 +1,33 @@
+#submenu-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#submenu-container h3{
+    color: #FFFFFF;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#submenu-item-left {
+    flex-basis: 100%;
+    flex: 3.3;
+}
+
+#submenu-item-right {
+    font-family: Poppins, 'Courier New', Courier, monospace;
+    margin-left: 1rem;
+    font-size: 1.3rem;
+    color: #FFFFFF;
+    border-radius: 5px;
+    border:1px solid #FFFFFF;
+    margin-bottom: 1rem;
+    flex-basis: 100%;
+    flex: 0.7;
+}
+
+#submenu-item-right ol li:hover {
+    color: #eda85f;
+    cursor: pointer;
+}
