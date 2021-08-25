@@ -9,9 +9,11 @@ export default function Projects(){
     
     const [techFind, setTechFind] = useState('')
     const [projects, setProjects] = useState([])
+    const [projects_techs, setProjectsTechs] = useState([])
     
     useEffect(async() => {
         setProjects(await FirebaseService.getProjects())
+        setProjectsTechs(await FirebaseService.getSubmenu("projects"))
     }, [])
 
     async function handleClick(){
@@ -72,16 +74,9 @@ export default function Projects(){
                     <div id="submenu-item-right">
                         <h3 onClick={handleClick}>Techs</h3>
                         <ol>
-                            <li onClick={handleClickSubmenu}>JAVASCRIPT</li>
-                            <li onClick={handleClickSubmenu}>SHELL SCRIPT</li>
-                            <li onClick={handleClickSubmenu}>SPRING</li>
-                            <li onClick={handleClickSubmenu}>REACTJS</li>
-                            <li onClick={handleClickSubmenu}>ANGULAR</li>
-                            <li onClick={handleClickSubmenu}>NODEJS</li>
-                            <li onClick={handleClickSubmenu}>DOCKER</li>
-                            <li onClick={handleClickSubmenu}>MYSQL</li>
-                            <li onClick={handleClickSubmenu}>SQLITE</li>
-                            <li onClick={handleClickSubmenu}>MONGODB</li>
+                            {projects_techs.map(project_tech => (
+                                <li onClick={handleClickSubmenu}>{project_tech}</li>
+                            ))}
                         </ol>
                     </div>
                 </div>

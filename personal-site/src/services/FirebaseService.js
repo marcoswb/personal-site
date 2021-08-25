@@ -182,4 +182,18 @@ export default class FirebaseService {
 
         return posts[0]
     }
+
+    static getSubmenu = async(submenu) => {
+        const dbRef = firebase.database().ref()
+        let techs = []
+
+        await dbRef.child("General").child('submenu').child(submenu).get()
+            .then((snapshot) => {
+                techs = snapshot.val().split(', ')
+            }).catch((error) => {
+                console.log(error)
+        })
+
+        return techs
+    }
 }

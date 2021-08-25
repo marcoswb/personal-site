@@ -9,9 +9,11 @@ export default function Blog(){
 
     const [themeFind, setThemeFind] = useState('')
     const [posts, setPosts] = useState([])
+    const [blog_techs, setBlogTechs] = useState([])
     
     useEffect(async() => {
         setPosts(await FirebaseService.getPosts())
+        setBlogTechs(await FirebaseService.getSubmenu("blog"))
     }, [])
 
     async function handleClick(){
@@ -72,12 +74,9 @@ export default function Blog(){
                     <div id="submenu-item-right">
                         <h3 onClick={handleClick}>Assuntos</h3>
                         <ol>
-                            <li onClick={handleClickSubmenu}>LINUX</li>
-                            <li onClick={handleClickSubmenu}>FILESYSTEM</li>
-                            <li onClick={handleClickSubmenu}>FHS</li>
-                            <li onClick={handleClickSubmenu}>GRUB</li>
-                            <li onClick={handleClickSubmenu}>BOOTLOADER</li>
-                            <li onClick={handleClickSubmenu}>PACKAGE</li>
+                            {blog_techs.map(project_tech => (
+                                <li onClick={handleClickSubmenu}>{project_tech}</li>
+                            ))}
                         </ol>
                     </div>
                 </div>
