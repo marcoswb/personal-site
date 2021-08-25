@@ -23,7 +23,11 @@
     "linkedin" : "link linkedin",
     "name" : "your name",
     "number_phone" : 5548999999999,
-    "occupation" : "your occupation"
+    "occupation" : "your occupation",
+    "submenu": {
+      "blog": "LINUX, OPEN SOURCE",
+      "projects": "JAVA, NODEJS"
+    }
   },
   "Projects" : [ null, {
     "description" : "description",
